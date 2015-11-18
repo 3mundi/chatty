@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :chatty, Chatty.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  # username: "",
+  # password: "",
   database: "chatty_dev",
   hostname: "localhost",
   pool_size: 10
