@@ -27,3 +27,5 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+# Start an ets table to manage chat nick names
+:ets.new(:instachat, [:named_table, :public, :set])
