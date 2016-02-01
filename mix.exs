@@ -19,7 +19,7 @@ defmodule Chatty.Mixfile do
   def application do
     [mod: {Chatty, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -36,7 +36,9 @@ defmodule Chatty.Mixfile do
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:comeonin, "~> 1.6"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"}#,
+    #  {:phoenix_generator, github: "etufe/phoenix_generator"}
+   ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

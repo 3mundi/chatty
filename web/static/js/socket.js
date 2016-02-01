@@ -75,7 +75,7 @@ channel.on("new_msg", payload => {
         </a>
         <div class="media-body">
             <small class="pull-right time"><i class="fa fa-clock-o"></i> ${Date()}</small>
-            <h5 class="media-heading">Naimish Sakhpara</h5>
+            <h5 class="media-heading">${payload.user}</h5>
             <small class="col-lg-10">
               ${payload.body}
             </small>

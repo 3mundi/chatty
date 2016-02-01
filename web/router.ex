@@ -1,5 +1,6 @@
 defmodule Chatty.Router do
   use Chatty.Web, :router
+  alias Chatty.Session
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,6 +8,16 @@ defmodule Chatty.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :put_user_token
+  end
+
+  defp put_user_token(conn, _) do
+    if current_user = Session.current_user(conn) do
+      token = Phoenix.Token.sign(conn, "user socket", current_user.id)
+      assign(conn, :user_token, token)
+    else
+      conn
+    end
   end
 
   pipeline :api do

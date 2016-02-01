@@ -20,7 +20,7 @@ defmodule Chatty.SessionController do
  end
 
  def delete(conn, _) do
-   Conn
+   conn
    |> delete_session(:current_user)
    |> put_flash(:info, "Te pires mierda")
    |> redirect(to: "/")
