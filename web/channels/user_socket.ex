@@ -29,6 +29,7 @@ defmodule Chatty.UserSocket do
         :error
     end
   end
+
   def connect(_params, socket) do
     {:ok, socket}
   end

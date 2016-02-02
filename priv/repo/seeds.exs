@@ -9,3 +9,11 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+collection = [
+  %{name: "Artur", email: "artur@example.com", password: "secret"},
+  %{name: "Juan", email: "juan@example.com", password: "secret"}
+]
+Enum.each collection, fn(u) ->
+  changeset = Chatty.User.changeset(%Chatty.User{}, u)
+  Chatty.Registration.create(changeset, Chatty.Repo)
+end

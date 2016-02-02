@@ -3,7 +3,6 @@ defmodule Chatty.PageController do
   import Chatty.Session, only: [current_user: 1]
 
   def index(conn, _params) do
-    # text conn, "HELLO"
     render conn, "index.html"
   end
 
@@ -12,7 +11,7 @@ defmodule Chatty.PageController do
       render conn, "chat.html"
     else
       conn
-      |> put_flash(:info, "You must be Logged in to continue")
+      |> put_flash(:info, "You must be logged in to continue.")
       |> redirect(to: "/login")
     end
   end
