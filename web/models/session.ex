@@ -16,10 +16,10 @@ defmodule Chatty.Session do
 
   def logged_in?(conn), do: !!current_user(conn)
 
-   defp authenticate(user, password) do
-     case user do
-       nil -> false
-       _   -> Comeonin.Bcrypt.checkpw(password, user.crypted_password)
-     end
-   end
+  defp authenticate(user, password) do
+    case user do
+      nil -> false
+      _   -> Comeonin.Bcrypt.checkpw(password, user.crypted_password)
+    end
+  end
 end

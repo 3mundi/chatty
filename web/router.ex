@@ -30,6 +30,7 @@ defmodule Chatty.Router do
     get "/", PageController, :chat
     resources "/users", UserController
     resources "/registrations", RegistrationController, only: [:new, :create]
+    resources "/rooms", RoomController
     get    "/login",  SessionController, :new
     post   "/login",  SessionController, :create
     delete "/logout", SessionController, :delete
