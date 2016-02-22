@@ -7,11 +7,21 @@ defmodule Chatty.RoomChannel do
   def join("rooms:lobby", _message, socket) do
     IO.puts "JOINED"
     if socket.assigns.user_id do
-      {:ok, socket}
+      {:ok, socket }
     else
       {:error, socket, :unauthorized}
     end
   end
+
+  def join("rooms:" <> room_id, params, socket) do
+    if socket.assigns.user_id do
+      {:ok, socket }
+    else
+      {:error, socket, :unauthorized}
+    end
+  end
+
+
 
   def handle_in("new_msg", %{"body" => body}, socket) do
     IO.puts body

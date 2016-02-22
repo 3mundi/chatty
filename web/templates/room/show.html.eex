@@ -13,6 +13,20 @@
   </li>
 
 </ul>
+<div class="container" id="chat-view" data-room-id="<%= @room.id %>">
+    <div class="row">
+        <div class="message-wrap col-lg-12">
+            <div class="msg-wrap" id="messages">
+            </div>
+            <div class="send-wrap ">
+                <textarea id="chat-input" class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+            </div>
+            <div class="btn-panel">
+                <a href="" class=" col-lg-3 btn" role="button"><i class="fa fa-plus"></i> Send message</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%= link "Edit", to: room_path(@conn, :edit, @room) %>
 <%= link "Back", to: room_path(@conn, :index) %>
